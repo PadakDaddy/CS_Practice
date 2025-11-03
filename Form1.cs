@@ -73,6 +73,11 @@ namespace Practice
             tboxResult.Text = iResult.ToString();
         }
 
-
+        private int fPlus(int iNumA, int iNumB)
+        {
+            int iResult = 0;
+            iResult = iNumA + iNumB;
+            return iResult; 
+        }
     }
 }
