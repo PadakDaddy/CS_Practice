@@ -22,88 +22,92 @@ namespace Practice
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int iNumA = int.Parse(tboxNum1.Text);
-            int iNumB = int.Parse(tboxNum2.Text);
+            int iResult = 0;
+            int iTemp = int.Parse(tboxResult.Text);
+            int iNumber = int.Parse(tboxNumber.Text);
 
-            //int iResult = iNumA + iNumB;
-            //tboxResult.Text = iResult.ToString();
-
-            tboxResult.Text = fPlus(iNumA, iNumB).ToString();
+            iResult = iTemp << iNumber;
+            tboxResult.Text = iResult.ToString();
         }
 
-        private void btnMinus_Click(object sender, EventArgs e)
+        private void tboxResult_TextChanged(object sender, EventArgs e)
         {
-            int iNumA = int.Parse(tboxNum1.Text);
-            int iNumB = int.Parse(tboxNum2.Text);
-
-            //int iResult = iNumA - iNumB;
-            //tboxResult.Text = iResult.ToString();
-            tboxResult.Text = fMinus(iNumA, iNumB).ToString();
+            tboxResultBit.Text = Convert.ToString(int.Parse(tboxResult.Text),2);
         }
 
-        private void btlMulti_Click(object sender, EventArgs e)
-        {
-            int iNumA = int.Parse(tboxNum1.Text);
-            int iNumB = int.Parse(tboxNum2.Text);
-
-            //int iResult = iNumA * iNumB;
-            //tboxResult.Text = iResult.ToString();
-            tboxResult.Text = fMulti(iNumA, iNumB).ToString();
-        }
-
-        private void btnDivision_Click(object sender, EventArgs e)
-        {
-            int iNumA = int.Parse(tboxNum1.Text);
-            int iNumB = int.Parse(tboxNum2.Text);
-
-            // int iResult = iNumA / iNumB; //몫
-            //int iResultㅠ = iNumA % iNumB; //나머지
-            //tboxResult.Text = iResult.ToString();
-            tboxResult.Text = fDivision(iNumA, iNumB).ToString();
-        }
-
-        private int fPlus(int iNumA, int iNumB)
+        private void button2_Click(object sender, EventArgs e)
         {
             int iResult = 0;
-            iResult = iNumA + iNumB;
-            return iResult; 
+            int iTemp = int.Parse(tboxResult.Text);
+            int iNumber = int.Parse(tboxNumber.Text);
+
+            iResult = iTemp >> iNumber;
+            tboxResult.Text = iResult.ToString();
         }
 
-        private int fMinus(int iNumA, int iNumB)
+        private void button3_Click(object sender, EventArgs e)
         {
-            int iResult = 0;
-            iResult = iNumA - iNumB;
-            return iResult;
+            int iTemp = int.Parse(tboxResult.Text);
+            int iNumber = int.Parse(tboxNumber.Text);
+            //iResult = 0;
+            //iResult = iTemp + iNumber;
+            //tboxResult.Text = iResult.ToString();
+            iTemp += iNumber;
+            tboxResult.Text = iTemp.ToString();
         }
 
-        private int fMulti(int iNumA, int iNumB)
+        private void button4_Click(object sender, EventArgs e)
         {
-            int iResult = 0;
-            iResult = iNumA * iNumB;
-            return iResult;
+            int iTemp = int.Parse(tboxResult.Text);
+            int iNumber = int.Parse(tboxNumber.Text);
+            //iResult = 0;
+            //iResult = iTemp - iNumber;
+            //tboxResult.Text = iResult.ToString();
+            iTemp -= iNumber;
+            tboxResult.Text = iTemp.ToString();
         }
 
-        private int fDivision(int iNumA, int iNumB)
+        private void button5_Click(object sender, EventArgs e)
         {
-            int iResult = 0;
-            iResult = iNumA / iNumB;
-            return iResult;
+            int iTemp = int.Parse(tboxResult.Text);
+            tboxResult.Text = (++iTemp).ToString();
+            tboxResultAfter.Text = (++iTemp).ToString();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int iTemp = int.Parse(tboxResult.Text);
+            tboxResult.Text = (iTemp++).ToString();
+            tboxResultAfter.Text = (iTemp++).ToString();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int iTemp1 = int.Parse(tboxResult.Text);
+            int iTemp2 = int.Parse(tboxResultAfter.Text);
+            int iNumber = int.Parse(tboxNumber.Text);
+
+            bool bResult = (iTemp1 > iNumber && iTemp2 > iNumber);
+
+            tboxAndOr.Text = bResult.ToString();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            int iTemp1 = int.Parse(tboxResult.Text);
+            int iTemp2 = int.Parse(tboxResultAfter.Text);
+            int iNumber = int.Parse(tboxNumber.Text);
+
+            bool bResult = (iTemp1 > iNumber || iTemp2 > iNumber);
+
+            tboxAndOr.Text = bResult.ToString();
         }
     }
 }
