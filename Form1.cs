@@ -15,56 +15,83 @@ namespace Practice
         public form1()
         {
             InitializeComponent();
+
+            ArrayTest();
+            ArrayClassTest();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lboxDay.Items.Add(enumDay.Monday.ToString());
-            lboxDay.Items.Add(enumDay.Tuesday.ToString());
-            lboxDay.Items.Add(enumDay.Wednesday.ToString());
-            lboxDay.Items.Add(enumDay.Thursday.ToString());
-            lboxDay.Items.Add(enumDay.Friday.ToString());
-            lboxDay.Items.Add(enumDay.Saturday.ToString());
-            lboxDay.Items.Add(enumDay.Sunday.ToString());
 
-            lboxTime.Items.Add(enumTime.Morning.ToString());
-            lboxTime.Items.Add(enumTime.Afternoon.ToString());
-            lboxTime.Items.Add(enumTime.Evening.ToString());
-            lboxTime.Items.Add(enumTime.Night.ToString());
         }
         
-        enum enumDay
-        {
-            Monday, //0
-            Tuesday,//1
-            Wednesday,//2
-            Thursday,//3
-            Friday,//4
-            Saturday,//5
-            Sunday//6
+        private void ArrayTest()
+        {/*int iDay1 = 10; int iDay2 = 20;  int iDay3 = 25;
+            string strT1 = "a, b, c, d";
+            string[] strTEST = strT1.Split(',');
+            string[] strTESTArray = { "a", "b", "c", "d" }; */
+
+            int[] iArrayTest1 = { 1, 2, 3, 4, 5 };
+
+            int[] iArrayTest2 = new int[5] {1,2,3,4,5}; 
+
         }
 
-        enum enumTime
+        private void ArrayClassTest()
         {
-            Morning,
-            Afternoon,
-            Evening,
-            Night
+            int[] iTest = {10,20,30,40,50};
+
+            int i = iTest.Length;
+
+            Array.Clear(iTest, 2, 2);
+
+            Array.Resize(ref iTest, 10);
+
+            int iSearch30 = Array.IndexOf(iTest, 50);
         }
 
-        private void btnResult1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            //I will meet Junho on Monday Afternoon 
-            string strResult = "I will meet " + tboxName.Text + " on " + lboxDay.SelectedItem.ToString() + " "+ lboxTime.SelectedItem.ToString();
+            dgDay.Rows.Clear();
 
-            tboxResult.Text = strResult; 
+            int[] iTest = { 10, 5, 30, 4, 15, 22, 18 };
+
+            lblArrayCount.Text = String.Format("Number of Documents : {0}", iTest.Length.ToString());
+
+            dgDay["colDay1",0].Value = iTest[0];
+            dgDay["colDay2", 0].Value = iTest[1];
+            dgDay["colDay3", 0].Value = iTest[2];
+            dgDay["colDay4", 0].Value = iTest[3];
+            dgDay["colDay5", 0].Value = iTest[4];
+            dgDay["colDay6", 0].Value = iTest[5];
+            dgDay["colDay7", 0].Value = iTest[6];
         }
 
-        private void btlResult2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            string strResult = String.Format("I will meet {0} on {1} {2}", tboxName.Text, lboxDay.SelectedItem.ToString(),lboxTime.SelectedItem.ToString() );
+            dgDay.Rows.Clear();
 
-            tboxResult.Text = strResult;
+            int[,] iTest = { { 10, 5, 30, 4, 15, 22, 18 }, { 11, 15, 24, 14, 5, 12, 14 } };
+
+            lblArrayCount.Text = String.Format("Number of Documents : {0}", iTest.Length.ToString());
+
+            dgDay.Rows.Add();
+            dgDay["colDay1", 0].Value = iTest[0,0];
+            dgDay["colDay2", 0].Value = iTest[0,1];
+            dgDay["colDay3", 0].Value = iTest[0,2];
+            dgDay["colDay4", 0].Value = iTest[0,3];
+            dgDay["colDay5", 0].Value = iTest[0,4];
+            dgDay["colDay6", 0].Value = iTest[0,5];
+            dgDay["colDay7", 0].Value = iTest[0,6];
+
+            dgDay["colDay1", 1].Value = iTest[1, 0];
+            dgDay["colDay2", 1].Value = iTest[1, 1];
+            dgDay["colDay3", 1].Value = iTest[1, 2];
+            dgDay["colDay4", 1].Value = iTest[1, 3];
+            dgDay["colDay5", 1].Value = iTest[1, 4];
+            dgDay["colDay6", 1].Value = iTest[1, 5];
+            dgDay["colDay7", 1].Value = iTest[1, 6];
+
         }
     }
 }
