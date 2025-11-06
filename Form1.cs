@@ -19,95 +19,52 @@ namespace Practice
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            lboxDay.Items.Add(enumDay.Monday.ToString());
+            lboxDay.Items.Add(enumDay.Tuesday.ToString());
+            lboxDay.Items.Add(enumDay.Wednesday.ToString());
+            lboxDay.Items.Add(enumDay.Thursday.ToString());
+            lboxDay.Items.Add(enumDay.Friday.ToString());
+            lboxDay.Items.Add(enumDay.Saturday.ToString());
+            lboxDay.Items.Add(enumDay.Sunday.ToString());
 
+            lboxTime.Items.Add(enumTime.Morning.ToString());
+            lboxTime.Items.Add(enumTime.Afternoon.ToString());
+            lboxTime.Items.Add(enumTime.Evening.ToString());
+            lboxTime.Items.Add(enumTime.Night.ToString());
+        }
+        
+        enum enumDay
+        {
+            Monday, //0
+            Tuesday,//1
+            Wednesday,//2
+            Thursday,//3
+            Friday,//4
+            Saturday,//5
+            Sunday//6
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        enum enumTime
         {
-
+            Morning,
+            Afternoon,
+            Evening,
+            Night
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnResult1_Click(object sender, EventArgs e)
         {
-            int iResult = 0;
-            int iTemp = int.Parse(tboxResult.Text);
-            int iNumber = int.Parse(tboxNumber.Text);
+            //I will meet Junho on Monday Afternoon 
+            string strResult = "I will meet " + tboxName.Text + " on " + lboxDay.SelectedItem.ToString() + " "+ lboxTime.SelectedItem.ToString();
 
-            iResult = iTemp << iNumber;
-            tboxResult.Text = iResult.ToString();
+            tboxResult.Text = strResult; 
         }
 
-        private void tboxResult_TextChanged(object sender, EventArgs e)
+        private void btlResult2_Click(object sender, EventArgs e)
         {
-            tboxResultBit.Text = Convert.ToString(int.Parse(tboxResult.Text),2);
-        }
+            string strResult = String.Format("I will meet {0} on {1} {2}", tboxName.Text, lboxDay.SelectedItem.ToString(),lboxTime.SelectedItem.ToString() );
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int iResult = 0;
-            int iTemp = int.Parse(tboxResult.Text);
-            int iNumber = int.Parse(tboxNumber.Text);
-
-            iResult = iTemp >> iNumber;
-            tboxResult.Text = iResult.ToString();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int iTemp = int.Parse(tboxResult.Text);
-            int iNumber = int.Parse(tboxNumber.Text);
-            //iResult = 0;
-            //iResult = iTemp + iNumber;
-            //tboxResult.Text = iResult.ToString();
-            iTemp += iNumber;
-            tboxResult.Text = iTemp.ToString();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            int iTemp = int.Parse(tboxResult.Text);
-            int iNumber = int.Parse(tboxNumber.Text);
-            //iResult = 0;
-            //iResult = iTemp - iNumber;
-            //tboxResult.Text = iResult.ToString();
-            iTemp -= iNumber;
-            tboxResult.Text = iTemp.ToString();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            int iTemp = int.Parse(tboxResult.Text);
-            tboxResult.Text = (++iTemp).ToString();
-            tboxResultAfter.Text = (++iTemp).ToString();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            int iTemp = int.Parse(tboxResult.Text);
-            tboxResult.Text = (iTemp++).ToString();
-            tboxResultAfter.Text = (iTemp++).ToString();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            int iTemp1 = int.Parse(tboxResult.Text);
-            int iTemp2 = int.Parse(tboxResultAfter.Text);
-            int iNumber = int.Parse(tboxNumber.Text);
-
-            bool bResult = (iTemp1 > iNumber && iTemp2 > iNumber);
-
-            tboxAndOr.Text = bResult.ToString();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            int iTemp1 = int.Parse(tboxResult.Text);
-            int iTemp2 = int.Parse(tboxResultAfter.Text);
-            int iNumber = int.Parse(tboxNumber.Text);
-
-            bool bResult = (iTemp1 > iNumber || iTemp2 > iNumber);
-
-            tboxAndOr.Text = bResult.ToString();
+            tboxResult.Text = strResult;
         }
     }
 }
