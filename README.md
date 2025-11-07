@@ -21,10 +21,10 @@ _All code is written in .NET 8 + Windows Forms – 100% solo, no tutorials copie
 | 8   | `for`, `foreach`, `while` + UI              | 🔄 In Progress | –           | `/08_Loops`            |
 | 9   | Struct & Class 1 + UI                       | ⏳ Planned     | –           | `/09_Struct and Class` |
 | 10  | Struct & Class 2 + UI                       | ⏳ Planned     | –           | `/09_Struct and Class` |
-| 11  | Execute & Class + UI                        | ⏳ Planned     | –           | `/11_Collections`      |
-| 12  | Inheritance + UI                            | ⏳ Planned     | –           | `/12_FileIO`           |
-| 13  | Override + UI                               | ⏳ Planned     | –           | `/13_Exceptions`       |
-| 14  | Encapsulation + UI                          | ⏳ Planned     | –           | `/14_TodoApp`          |
+| 11  | Execute & Class + UI                        | ⏳ Planned     | –           | `/10_Create Class`     |
+| 12  | Inheritance + UI                            | ⏳ Planned     | –           | `/11_Inheritance`      |
+| 13  | Override + UI                               | ⏳ Planned     | –           | `/13_Overload,Override`|
+| 14  | Encapsulation + UI                          | ⏳ Planned     | –           | `/14_Partial Class`    |
 
 ## ............
 
