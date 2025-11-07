@@ -15,83 +15,108 @@ namespace Practice
         public form1()
         {
             InitializeComponent();
-
-            ArrayTest();
-            ArrayClassTest();
+            ifTest();
+            switchTest();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-        
-        private void ArrayTest()
-        {/*int iDay1 = 10; int iDay2 = 20;  int iDay3 = 25;
-            string strT1 = "a, b, c, d";
-            string[] strTEST = strT1.Split(',');
-            string[] strTESTArray = { "a", "b", "c", "d" }; */
 
-            int[] iArrayTest1 = { 1, 2, 3, 4, 5 };
+        private void switchTest()
+        {
+            int iRet = 3;
+            string strResult = "";
+            switch (iRet)
+            {
+                case 3:
+                    {
+                        strResult = "2 or 3";
+                    }
+                    break;
+                case 4:
+                    {
+                        strResult = "4";
+                    }
+                    break;
+                default:
+                    {
+                        strResult = "I do not know";
+                    }
+                    break;
+            }
+        }
 
-            int[] iArrayTest2 = new int[5] {1,2,3,4,5}; 
+
+        private void ifTest()
+        {
+            int ia = 30;
+            int ib = 20;
+
+            string strResult = "";
+
+            if (ia > ib)
+            {
+                strResult = "ia is bigger";
+            }
+            else if (ia < ib)
+            {
+                strResult = "ia is smaller";
+            }
+            else
+            {
+                strResult = "ia, ib are same";
+            }
+
+            strResult = (ia > ib) ? "ia is bigger" : "ia, ib are same";
 
         }
 
-        private void ArrayClassTest()
+        private void btnIfResult_Click(object sender, EventArgs e)
         {
-            int[] iTest = {10,20,30,40,50};
+            int iNumber1 = (int)nNumber1.Value;
+            int iNumber2 = (int)nNumber2.Value;
 
-            int i = iTest.Length;
-
-            Array.Clear(iTest, 2, 2);
-
-            Array.Resize(ref iTest, 10);
-
-            int iSearch30 = Array.IndexOf(iTest, 50);
+            if(iNumber1 > iNumber2)
+            {
+                lblIfResult.Text = string.Format("- Number1 is {0} bigger than Number2.", iNumber1 - iNumber2);
+            }
+            else if (iNumber1 < iNumber2)
+            {
+                lblIfResult.Text = string.Format("- Number2 is {0} bigger than Number1.", iNumber2 - iNumber1);
+            }
+            else
+            {
+                lblIfResult.Text =string.Format( "Number 1,2 are same. Number is {0}" , iNumber1);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSwitchResult_Click(object sender, EventArgs e)
         {
-            dgDay.Rows.Clear();
+            string strSelect = cboxDay.Text;
 
-            int[] iTest = { 10, 5, 30, 4, 15, 22, 18 };
-
-            lblArrayCount.Text = String.Format("Number of Documents : {0}", iTest.Length.ToString());
-
-            dgDay["colDay1",0].Value = iTest[0];
-            dgDay["colDay2", 0].Value = iTest[1];
-            dgDay["colDay3", 0].Value = iTest[2];
-            dgDay["colDay4", 0].Value = iTest[3];
-            dgDay["colDay5", 0].Value = iTest[4];
-            dgDay["colDay6", 0].Value = iTest[5];
-            dgDay["colDay7", 0].Value = iTest[6];
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            dgDay.Rows.Clear();
-
-            int[,] iTest = { { 10, 5, 30, 4, 15, 22, 18 }, { 11, 15, 24, 14, 5, 12, 14 } };
-
-            lblArrayCount.Text = String.Format("Number of Documents : {0}", iTest.Length.ToString());
-
-            dgDay.Rows.Add();
-            dgDay["colDay1", 0].Value = iTest[0,0];
-            dgDay["colDay2", 0].Value = iTest[0,1];
-            dgDay["colDay3", 0].Value = iTest[0,2];
-            dgDay["colDay4", 0].Value = iTest[0,3];
-            dgDay["colDay5", 0].Value = iTest[0,4];
-            dgDay["colDay6", 0].Value = iTest[0,5];
-            dgDay["colDay7", 0].Value = iTest[0,6];
-
-            dgDay["colDay1", 1].Value = iTest[1, 0];
-            dgDay["colDay2", 1].Value = iTest[1, 1];
-            dgDay["colDay3", 1].Value = iTest[1, 2];
-            dgDay["colDay4", 1].Value = iTest[1, 3];
-            dgDay["colDay5", 1].Value = iTest[1, 4];
-            dgDay["colDay6", 1].Value = iTest[1, 5];
-            dgDay["colDay7", 1].Value = iTest[1, 6];
-
+            switch (strSelect)
+            {
+                case "Monday":
+                    lblSwitchResult.Text = "- Selected day is Monday";
+                    break;
+                case "TuesDay":
+                    lblSwitchResult.Text = "- Selected day is TuesDay";
+                    break;
+                case "Wednesday":
+                    lblSwitchResult.Text = "- Selected day is Wednesday";
+                    break;
+                case "Thursday":
+                    lblSwitchResult.Text = "- Selected day is Thursday";
+                    break;
+                case "Friday":
+                    lblSwitchResult.Text = "- Selected day is Friday";
+                    break;
+                default:
+                    lblSwitchResult.Text = "- Selected day is Weekend";
+                    break;
+            }
         }
     }
 }

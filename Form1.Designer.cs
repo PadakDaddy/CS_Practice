@@ -29,139 +29,134 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dgDay = new System.Windows.Forms.DataGridView();
-            this.colDay1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDay2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDay3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDay4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDay5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDay6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDay7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.lblArrayCount = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDay)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnIfResult = new System.Windows.Forms.Button();
+            this.lblIfResult = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSwitchResult = new System.Windows.Forms.Button();
+            this.nNumber1 = new System.Windows.Forms.NumericUpDown();
+            this.nNumber2 = new System.Windows.Forms.NumericUpDown();
+            this.cboxDay = new System.Windows.Forms.ComboBox();
+            this.lblSwitchResult = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.nNumber1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nNumber2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 24);
+            this.label1.Location = new System.Drawing.Point(40, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 18);
+            this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Number of visits";
+            this.label1.Text = "Number1";
             // 
-            // dgDay
+            // label2
             // 
-            this.dgDay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colDay1,
-            this.colDay2,
-            this.colDay3,
-            this.colDay4,
-            this.colDay5,
-            this.colDay6,
-            this.colDay7});
-            this.dgDay.Location = new System.Drawing.Point(16, 57);
-            this.dgDay.Name = "dgDay";
-            this.dgDay.RowHeadersWidth = 62;
-            this.dgDay.RowTemplate.Height = 30;
-            this.dgDay.Size = new System.Drawing.Size(1115, 209);
-            this.dgDay.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(187, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Number2";
             // 
-            // colDay1
+            // btnIfResult
             // 
-            this.colDay1.HeaderText = "Monday";
-            this.colDay1.MinimumWidth = 8;
-            this.colDay1.Name = "colDay1";
-            this.colDay1.Width = 150;
+            this.btnIfResult.Location = new System.Drawing.Point(342, 44);
+            this.btnIfResult.Name = "btnIfResult";
+            this.btnIfResult.Size = new System.Drawing.Size(133, 64);
+            this.btnIfResult.TabIndex = 2;
+            this.btnIfResult.Text = "Compare Number";
+            this.btnIfResult.UseVisualStyleBackColor = true;
+            this.btnIfResult.Click += new System.EventHandler(this.btnIfResult_Click);
             // 
-            // colDay2
+            // lblIfResult
             // 
-            this.colDay2.HeaderText = "Tuesday";
-            this.colDay2.MinimumWidth = 8;
-            this.colDay2.Name = "colDay2";
-            this.colDay2.Width = 150;
+            this.lblIfResult.AutoSize = true;
+            this.lblIfResult.Location = new System.Drawing.Point(43, 132);
+            this.lblIfResult.Name = "lblIfResult";
+            this.lblIfResult.Size = new System.Drawing.Size(17, 18);
+            this.lblIfResult.TabIndex = 3;
+            this.lblIfResult.Text = "-";
             // 
-            // colDay3
+            // label4
             // 
-            this.colDay3.HeaderText = "Wendesday";
-            this.colDay3.MinimumWidth = 8;
-            this.colDay3.Name = "colDay3";
-            this.colDay3.Width = 150;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 221);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 18);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Day";
             // 
-            // colDay4
+            // btnSwitchResult
             // 
-            this.colDay4.HeaderText = "Thursday";
-            this.colDay4.MinimumWidth = 8;
-            this.colDay4.Name = "colDay4";
-            this.colDay4.Width = 150;
+            this.btnSwitchResult.Location = new System.Drawing.Point(342, 230);
+            this.btnSwitchResult.Name = "btnSwitchResult";
+            this.btnSwitchResult.Size = new System.Drawing.Size(133, 64);
+            this.btnSwitchResult.TabIndex = 6;
+            this.btnSwitchResult.Text = "Selected Day";
+            this.btnSwitchResult.UseVisualStyleBackColor = true;
+            this.btnSwitchResult.Click += new System.EventHandler(this.btnSwitchResult_Click);
             // 
-            // colDay5
+            // nNumber1
             // 
-            this.colDay5.HeaderText = "Friday";
-            this.colDay5.MinimumWidth = 8;
-            this.colDay5.Name = "colDay5";
-            this.colDay5.Width = 150;
+            this.nNumber1.Location = new System.Drawing.Point(43, 65);
+            this.nNumber1.Name = "nNumber1";
+            this.nNumber1.Size = new System.Drawing.Size(120, 28);
+            this.nNumber1.TabIndex = 7;
             // 
-            // colDay6
+            // nNumber2
             // 
-            this.colDay6.HeaderText = "Saturday";
-            this.colDay6.MinimumWidth = 8;
-            this.colDay6.Name = "colDay6";
-            this.colDay6.Width = 150;
+            this.nNumber2.Location = new System.Drawing.Point(190, 65);
+            this.nNumber2.Name = "nNumber2";
+            this.nNumber2.Size = new System.Drawing.Size(120, 28);
+            this.nNumber2.TabIndex = 8;
             // 
-            // colDay7
+            // cboxDay
             // 
-            this.colDay7.HeaderText = "Sunday";
-            this.colDay7.MinimumWidth = 8;
-            this.colDay7.Name = "colDay7";
-            this.colDay7.Width = 150;
+            this.cboxDay.FormattingEnabled = true;
+            this.cboxDay.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
+            this.cboxDay.Location = new System.Drawing.Point(46, 250);
+            this.cboxDay.Name = "cboxDay";
+            this.cboxDay.Size = new System.Drawing.Size(121, 26);
+            this.cboxDay.TabIndex = 9;
             // 
-            // button1
+            // lblSwitchResult
             // 
-            this.button1.Location = new System.Drawing.Point(16, 272);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "1 Week";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(173, 272);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 40);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "2 Weeks";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // lblArrayCount
-            // 
-            this.lblArrayCount.AutoSize = true;
-            this.lblArrayCount.Location = new System.Drawing.Point(337, 283);
-            this.lblArrayCount.Name = "lblArrayCount";
-            this.lblArrayCount.Size = new System.Drawing.Size(213, 18);
-            this.lblArrayCount.TabIndex = 4;
-            this.lblArrayCount.Text = "Number of Documents: 0";
+            this.lblSwitchResult.AutoSize = true;
+            this.lblSwitchResult.Location = new System.Drawing.Point(55, 324);
+            this.lblSwitchResult.Name = "lblSwitchResult";
+            this.lblSwitchResult.Size = new System.Drawing.Size(17, 18);
+            this.lblSwitchResult.TabIndex = 10;
+            this.lblSwitchResult.Text = "-";
             // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 324);
-            this.Controls.Add(this.lblArrayCount);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dgDay);
+            this.ClientSize = new System.Drawing.Size(525, 429);
+            this.Controls.Add(this.lblSwitchResult);
+            this.Controls.Add(this.cboxDay);
+            this.Controls.Add(this.nNumber2);
+            this.Controls.Add(this.nNumber1);
+            this.Controls.Add(this.btnSwitchResult);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblIfResult);
+            this.Controls.Add(this.btnIfResult);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nNumber1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nNumber2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,17 +165,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgDay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDay1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDay2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDay3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDay4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDay5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDay6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDay7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label lblArrayCount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnIfResult;
+        private System.Windows.Forms.Label lblIfResult;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSwitchResult;
+        private System.Windows.Forms.NumericUpDown nNumber1;
+        private System.Windows.Forms.NumericUpDown nNumber2;
+        private System.Windows.Forms.ComboBox cboxDay;
+        private System.Windows.Forms.Label lblSwitchResult;
     }
 }
 
