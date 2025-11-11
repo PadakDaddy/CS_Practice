@@ -23,5 +23,27 @@ namespace Practice
 
         }
 
+        private void btnFor_Click(object sender, EventArgs e)
+        {
+            tboxResult.Text = string.Empty;
+
+            StringBuilder sb = new StringBuilder();
+
+            int iResult = 0;
+
+            for (int i = 1; i < 10; i++)
+            {
+                iResult = iResult + i;
+                sb.Append(string.Format("From 1 + to {0} = {1} \r\n", i, iResult));
+
+
+            }
+            tboxResult.Text = sb.ToString();
+        }
+
+        private void tboxResult_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
